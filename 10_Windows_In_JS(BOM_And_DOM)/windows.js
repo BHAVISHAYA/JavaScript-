@@ -405,3 +405,16 @@ for(let elem of findElemenetByClassName) {
 
 
 console.log(findElemenetByClassName.innerHTML);  //? undefined 
+
+
+const findEle = document.querySelectorAll("li");
+console.log(findEle);
+for(let value of findEle) {
+    console.log(value.innerText);
+}
+findEle.forEach((currEle) => {
+    console.log(currEle.innerText);
+})
+
+
+
