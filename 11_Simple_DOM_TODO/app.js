@@ -1,11 +1,22 @@
-let inputElement = document.getElementsByClassName("inputField");
-let clickBtn = document.getElementsByClassName("btn");
+let inputElement = document.getElementById("inputField");
+let addBtn = document.getElementById("myBtn");
+let listContainer = document.querySelector(".todoListElem");
 
 
 const addToDo = () => {
-    console.log(addToDo);
+    let h4Tag = document.createElement("h4");
+    h4Tag.textContent = inputElement.value;
+    listContainer.appendChild(h4Tag);
+    inputElement.value = "";
 }
 
-clickBtn.addEventListener('click', () => {
+addBtn.addEventListener('click', () => {
     addToDo();
+});
+
+
+listContainer.addEventListener('click', (event) => {
+    console.log(event.target);
+    let currElement = event.target;
+    currElement.remove();
 });
